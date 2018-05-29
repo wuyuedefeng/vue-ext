@@ -1,6 +1,8 @@
-import debounce from './debounce'
+import input from './input'
+import img from './img'
 export default {
 	install (Vue) {
-		Vue.directive('debounce', debounce)
+	  Vue.use(input)
+	  Vue.use(img)
 	}
 }

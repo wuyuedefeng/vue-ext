@@ -36,7 +36,9 @@ this.$ext.unmount(componentInstance)
 
 # Directives
 
-## debounce
+## Input
+
+### debounce
 
 v-debounce: default: `600ms`
 
@@ -46,4 +48,25 @@ v-debounce: default: `600ms`
 ```
 <input type="text" v-model="input" @change="changeInputValue" v-debounce="600">
 <input type="text" v-model.lazy="input" @change="changeInputValue" v-debounce="600">
+```
+
+## Img
+
+### src
+
+v-src: 图片懒加载
+```
+<img src="../assets/logo.png" alt="" v-src="imgSrc">
+export default {
+  data () {
+    return {
+      imgSrc: ''
+    }
+  },
+  mounted () {
+    setTimeout(() => {
+      this.imgSrc = 'http://www.baxx.com/.../1.jpg'
+    })
+  }
+}
 ```
