@@ -12,9 +12,10 @@ Vue.use(VueExt)
 
 # `this.$ext`
 
+---
 通过`js`挂载某个组件到视图中
 ```
-this.$ext.mount(Component, options)
+let componentInstance = this.$ext.mount(Component, options)
 ```
 
 #### options
@@ -27,6 +28,11 @@ this.$ext.mount(Component, options)
 
 Component实例化对象
 
+---
+通过`js`移除挂载的对象
+```
+this.$ext.unmount(componentInstance)
+```
 
 # Directives
 
