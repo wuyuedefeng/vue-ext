@@ -5,9 +5,9 @@ export default {
 				let parentDom = options['onEl'] || document.body
 				delete options['onEl']
 				const instance = new Vue({
-					// data: options,
+					data: options.data || {},
 					render (h) {
-						return h(Component, {props: options})
+						return h(Component, {props: options.props || {}})
 					}
 				})
 				parentDom.appendChild(instance.$mount().$el)

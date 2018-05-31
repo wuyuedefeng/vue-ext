@@ -21,8 +21,8 @@ let componentInstance = this.$ext.mount(Component, options)
 #### options
 
 - onEl: 挂载到哪个dom上，默认： `document.body`
-
-其他参数会作为`Component`的`props`
+- props[`Object`]: `Component`的`props`
+- data[`Object`]: Vue实例data数据: 通过`componentInstance.$root.$data`获取该值
 
 #### 返回值
 
@@ -54,7 +54,7 @@ v-debounce: default: `600ms`
 
 ### src
 
-v-src: 图片懒加载
+v-src: 图片懒加载, 该参数url加载成功后才会真正显示该url
 ```
 <img src="../assets/logo.png" alt="" v-src="imgSrc">
 export default {
