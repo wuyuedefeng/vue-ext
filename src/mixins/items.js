@@ -1,7 +1,7 @@
 export default {
   data () {
     return {
-      mixData: {
+      mixTableData: {
         items: [],
         refreshLoading: false,
         loadMoreLoading: false,
@@ -21,7 +21,7 @@ export default {
   watch: {
     searches: {
       handler (nv) {
-        let q = {page: this.mixData.pagination.current_page, per_page: this.mixData.pagination.page_count}
+        let q = {page: this.mixTableData.pagination.current_page, per_page: this.mixTableData.pagination.page_count}
         nv.forEach(search => {
           q[search['key']] = search['default'] || ''
         })
@@ -49,29 +49,29 @@ export default {
   },
   methods: {
     mixRefreshData (promise) {
-      this.mixData.refreshLoading = true
+      this.mixTableData.refreshLoading = true
       return new Promise((resolve, reject) => {
         promise.then(res => {
-          this.mixData.refreshLoading = false
-          this.mixData.items = res.data.items
-          this.mixData.pagination = res.data.pagination
+          this.mixTableData.refreshLoading = false
+          this.mixTableData.items = res.data.items
+          this.mixTableData.pagination = res.data.pagination
           resolve(res)
         }).catch(err => {
-          this.mixData.refreshLoading = false
+          this.mixTableData.refreshLoading = false
           reject(err)
         })
       })
     },
     mixLoadMoreData (promise) {
-      this.mixData.loadMoreLoading = true
+      this.mixTableData.loadMoreLoading = true
       return new Promise((resolve, reject) => {
         promise.then(res => {
-          this.mixData.loadMoreLoading = false
-          this.mixData.items = this.mixData.items.concat(res.data.items)
-          this.mixData.pagination = res.data.pagination
+          this.mixTableData.loadMoreLoading = false
+          this.mixTableData.items = this.mixTableData.items.concat(res.data.items)
+          this.mixTableData.pagination = res.data.pagination
           resolve(res)
         }).catch(err => {
-          this.mixData.loadMoreLoading = false
+          this.mixTableData.loadMoreLoading = false
           reject(err)
         })
       })
