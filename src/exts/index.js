@@ -12,12 +12,11 @@ export default {
 				})
 				parentDom.appendChild(instance.$mount().$el)
         let component = instance.$children[0]
-        console.log(instance.$el, component.$el, instance.$el, component)
 				return component
 			},
       unmount (component) {
-        component.$el.parentNode.removeChild(component.$el)
-        component.$destroy()
+        component.$root.$el.parentNode.removeChild(component.$root.$el)
+        component.$root.$destroy()
       }
 		}
 	}
