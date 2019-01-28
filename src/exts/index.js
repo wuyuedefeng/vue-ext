@@ -7,7 +7,7 @@ export default {
 				const instance = new Vue({
 					data: options.data || {},
 					render (h) {
-						return h(Component, {props: options.props || {}})
+						return h(Component, {props: options.props || {}, data: options.data || {}})
 					}
 				})
 				parentDom.appendChild(instance.$mount().$el)

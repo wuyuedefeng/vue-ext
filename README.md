@@ -22,7 +22,7 @@ let componentInstance = this.$ext.mount(Component, options)
 
 - onEl: 挂载到哪个dom上，默认： `document.body`
 - props[`Object`]: `Component`的`props`
-- data[`Object`]: Vue实例data数据: 通过`componentInstance.$root.$data`获取该值
+- data[`Object`]: Vue实例data数据: 通过`componentInstance.$root.$data` or `componentInstance.data`获取该值
 
 #### 返回值
 
