@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	install (Vue) {
 		Vue.prototype.$ext = Vue.prototype.$ext || {
 			mount (Component, options = {}) {

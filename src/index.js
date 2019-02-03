@@ -1,6 +1,6 @@
-import exts from './exts'
-import directives from './directives'
-export default {
+let exts = require('./exts')
+let directives = require('./directives')
+module.exports = {
 	install (Vue) {
 		Vue.use(exts)
 		Vue.use(directives)

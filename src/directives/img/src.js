@@ -1,4 +1,4 @@
-export default function (el, binding) {
+module.exports = function (el, binding) {
   // change src
   if (binding.value && binding.value !== binding.oldValue) {
     let img = new Image()

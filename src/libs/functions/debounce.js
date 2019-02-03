@@ -39,4 +39,4 @@ function debounce(funcRef, wait, immediate) {
 		}
 	}
 }
-export default debounce
+module.exports = debounce
